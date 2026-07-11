@@ -1,124 +1,124 @@
-# Neuronok Módosítása Kis Nyelvi Modellekben
+# Modifying Neurons in Small Language Models
 
-**Teljes Útmutató Kezdőtől Haladóig**  
-**Modell:** NEURA 300M (355M paraméter, 24 réteg, 1024 dim)  
-**Alapuló kísérletek:** 2026. június–július  
-**Szerző:** Zsombi & Hermes Agent (Nous Research)  
-**Licenc:** CC BY 4.0
-
----
-
-## Leírás
-
-Ez a projekt egy **lépésről-lépésre útmutató könyv**, amely bemutatja hogyan lehet **közvetlenül módosítani a neuronokat** kis nyelvi modellekben (mint a NEURA 300M). A könyv 25 fejezeten keresztül vezet végig az alapoktól a legújabb kutatási módszerekig, beleértve az aktivációs patchinget, ROME-ot, MEMIT-et, FiNE-t, sparse autoencodereket és fejlett activation steeringet.
+**Complete Guide from Beginner to Advanced**  
+**Model:** NEURA 300M (355M parameters, 24 layers, 1024 dim)  
+**Based on experiments:** June–July 2026  
+**Author:** Zsombi & Hermes Agent (Nous Research)  
+**License:** CC BY 4.0
 
 ---
 
-## Fájlszerkezet
+## Description
+
+This project is a **step-by-step guidebook** that demonstrates how to **directly modify neurons** in small language models (such as NEURA 300M). The book guides you through 25 chapters, from fundamentals to the latest research methods, including activation patching, ROME, MEMIT, FiNE, sparse autoencoders, and advanced activation steering.
+
+---
+
+## File Structure
 
 ```
 neuron_modification_book/
 │
-├── README.md                              # Ez a dokumentum
-├── STATUS.md                              # Projekt státusz
+├── README.md                              # This document
+├── STATUS.md                              # Project status
 │
-├── combined_book.md                       # A teljes könyv (1-18. fejezet)
-├── neuron_modification_book.md            # A könyv korábbi verziója
+├── combined_book.md                       # The complete book (chapters 1-18)
+├── neuron_modification_book.md            # Previous version of the book
 │
-├── neura_research_paper_01_training_dynamics.md     # 1. Kutatási cikk: Training dinamika
-├── neura_research_paper_02_neuron_specialization.md # 2. Kutatási cikk: Neuron specializáció
-├── neura_research_paper_03_attention_hierarchy.md   # 3. Kutatási cikk: Attention hierarchia
-├── neura_research_paper_04_why_cant_reason.md       # 4. Kutatási cikk: Miért nem tud következtetni
-├── neura_research_paper_05_practical_guide.md       # 5. Kutatási cikk: Gyakorlati útmutató
+├── neura_research_paper_01_training_dynamics.md     # 1. Research paper: Training dynamics
+├── neura_research_paper_02_neuron_specialization.md # 2. Research paper: Neuron specialization
+├── neura_research_paper_03_attention_hierarchy.md   # 3. Research paper: Attention hierarchy
+├── neura_research_paper_04_why_cant_reason.md       # 4. Research paper: Why it can't reason
+├── neura_research_paper_05_practical_guide.md       # 5. Research paper: Practical guide
 │
-├── ch19_activation_patching.md            # 19. fejezet: Aktivációs Patching
-├── ch20_ROME.md                           # 20. fejezet: Rank-One Model Editing
-├── ch21_MEMIT.md                          # 21. fejezet: Mass-Editing Memory
-├── ch22_FiNE.md                           # 22. fejezet: Fine-grained Neuron Editing
-├── ch23_SAE.md                            # 23. fejezet: Sparse Autoencoders
-├── ch24_steering.md                       # 24. fejezet: Aktivációs Steering
-├── ch25_update.md                         # 25. fejezet: Döntési fa + összefoglaló
+├── ch19_activation_patching.md            # Chapter 19: Activation Patching
+├── ch20_ROME.md                           # Chapter 20: Rank-One Model Editing
+├── ch21_MEMIT.md                          # Chapter 21: Mass-Editing Memory
+├── ch22_FiNE.md                           # Chapter 22: Fine-grained Neuron Editing
+├── ch23_SAE.md                            # Chapter 23: Sparse Autoencoders
+├── ch24_steering.md                       # Chapter 24: Activation Steering
+├── ch25_update.md                         # Chapter 25: Decision tree + summary
 │
-├── pulse_adapter_results.md               # Pulse adapter eredmények
+├── pulse_adapter_results.md               # Pulse adapter results
 │
-└── scripts/                               # Kísérleti scriptek
-    ├── RUNME.bat                          # Indító script
-    ├── logicadapter_pulse.py              # LogicAdapter Pulse kísérlet
+└── scripts/                               # Experimental scripts
+    ├── RUNME.bat                          # Launcher script
+    ├── logicadapter_pulse.py              # LogicAdapter Pulse experiment
     ├── logicadapter_v6.py                 # LogicAdapter v6
-    ├── activation_patching.py             # Aktivációs patching kísérlet
-    ├── rome_edit.py                       # ROME edit kísérlet
-    └── tokenize_opensubs.py               # OpenSubtitles tokenizálás
+    ├── activation_patching.py             # Activation patching experiment
+    ├── rome_edit.py                       # ROME edit experiment
+    └── tokenize_opensubs.py               # OpenSubtitles tokenization
 ```
 
 ---
 
-## A könyv tartalma
+## Book Contents
 
-### 1. rész: Alapok
-| Fejezet | Téma |
+### Part 1: Fundamentals
+| Chapter | Topic |
 |---------|------|
-| 1 | Bevezetés — Mi az a neuron módosítás? |
-| 2 | A Transformer Neuron Felépítése |
-| 3 | Környezet Telepítése |
-| 4 | Az Első Neuron Módosítás |
+| 1 | Introduction — What is neuron modification? |
+| 2 | The Structure of a Transformer Neuron |
+| 3 | Environment Setup |
+| 4 | Your First Neuron Modification |
 
-### 2. rész: Módszerek
-| Fejezet | Téma |
+### Part 2: Methods
+| Chapter | Topic |
 |---------|------|
-| 5-18 | Köztes fejezetek (combined_book.md) |
-| 19 | **Aktivációs Patching & Causal Tracing** |
+| 5-18 | Intermediate chapters (combined_book.md) |
+| 19 | **Activation Patching & Causal Tracing** |
 | 20 | **ROME** — Rank-One Model Editing |
-| 21 | **MEMIT** — Tömeges memória szerkesztés |
-| 22 | **FiNE** — Neuron-szintű tudás szerkesztés (ICLR 2025) |
-| 23 | **Sparse Autoencoders** — Polysemantic neuronok szétfejtése |
-| 24 | **Fejlett Activation Steering** |
-| 25 | **Frissített döntési fa** — 6+ módszer összehasonlítása |
+| 21 | **MEMIT** — Mass-Editing Memory |
+| 22 | **FiNE** — Neuron-level Knowledge Editing (ICLR 2025) |
+| 23 | **Sparse Autoencoders** — Disentangling polysemantic neurons |
+| 24 | **Advanced Activation Steering** |
+| 25 | **Updated Decision Tree** — Comparison of 6+ methods |
 
 ---
 
-## Használat
+## Usage
 
-### Scriptek futtatása
+### Running Scripts
 
 ```bash
 cd scripts
 
-# Aktivációs patching
+# Activation patching
 python activation_patching.py
 
 # ROME edit
 python rome_edit.py
 
-# LogicAdapter kísérletek
+# LogicAdapter experiments
 python logicadapter_pulse.py
 python logicadapter_v6.py
 ```
 
-### Könyv olvasása
+### Reading the Book
 
-A könyv Markdown formátumban van, bármilyen Markdown olvasóval megnyitható:
+The book is in Markdown format and can be opened with any Markdown reader:
 
 ```bash
 # VS Code
 code combined_book.md
 
-# Böngészőben
+# In browser
 start combined_book.md
 ```
 
 ---
 
-## Miért érdemes neuront módosítani?
+## Why Modify Neurons?
 
-| Hagyományos módszer | Neuron módosítás |
+| Traditional Method | Neuron Modification |
 |---------------------|------------------|
-| Teljes fine-tuning (órák, sok GPU) | Egy neuron átírása (másodpercek, CPU) |
-| Minden paraméter változik | Csak 1-2 neuron változik |
-| Katasztrofális felejtés veszélye | Célzott, a többi tudás sértetlen |
-| Nagy adatkészlet kell (~10K+ példa) | 1-100 példa is elég |
+| Full fine-tuning (hours, heavy GPU) | Rewriting one neuron (seconds, CPU) |
+| All parameters change | Only 1-2 neurons change |
+| Risk of catastrophic forgetting | Targeted, other knowledge intact |
+| Large dataset required (~10K+ examples) | 1-100 examples sufficient |
 
 ---
 
-## Fejlesztő
+## Developer
 
-Zsombi & Hermes Agent (Nous Research) (AI asszisztens segítségével)
+Zsombi & Hermes Agent (Nous Research)
