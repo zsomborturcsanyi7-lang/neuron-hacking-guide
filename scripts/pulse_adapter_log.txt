@@ -1,0 +1,65 @@
+18:08:08 === LogicAdapter Pulse 350M ===
+18:08:08 Device: cuda
+18:08:08 Adapter hidden: 128
+18:08:08 
+Modell betöltése...
+18:08:18 Modell: 367,526,912 paraméter
+18:08:18 Tokenizer: 32000 szókészlet
+18:08:18 Digit token IDs: {'1': 30755, '2': 30761, '3': 30771, '4': 30772, '5': 30774, '6': 30776, '7': 30778, '8': 30777, '9': 30764}
+18:08:18 
+Adat: 450 példa
+18:08:18 Eloszlás: {'1': 50, '2': 50, '3': 50, '4': 50, '5': 50, '6': 50, '7': 50, '8': 50, '9': 50}
+18:08:26 Adapter paraméterek: 262,144
+18:08:26 Epochok: 200, Batch: 16
+18:08:47 Epoch   0: loss=6.7239 acc=14.9% best=14.9% time=21s
+18:12:03 Epoch  10: loss=3.0621 acc=35.8% best=35.8% time=217s
+18:15:19 Epoch  20: loss=2.3156 acc=54.0% best=54.0% time=413s
+18:18:33 Epoch  30: loss=1.7185 acc=67.1% best=67.1% time=607s
+18:21:44 Epoch  40: loss=1.2562 acc=75.1% best=75.1% time=798s
+18:24:53 Epoch  50: loss=1.1699 acc=76.7% best=76.7% time=987s
+18:28:02 Epoch  60: loss=0.9125 acc=82.7% best=82.7% time=1176s
+18:31:07 Epoch  70: loss=0.8231 acc=86.7% best=86.7% time=1361s
+18:34:12 Epoch  80: loss=0.6851 acc=87.1% best=87.1% time=1546s
+18:37:19 Epoch  90: loss=0.5006 acc=90.4% best=90.4% time=1733s
+18:40:35 Epoch 100: loss=0.4607 acc=93.3% best=93.3% time=1929s
+18:42:56 Epoch 110: loss=0.2508 acc=94.9% best=94.9% time=2070s
+18:45:21 Epoch 120: loss=0.2056 acc=95.8% best=95.8% time=2215s
+18:48:18 Epoch 130: loss=0.1362 acc=98.0% best=98.0% time=2391s
+18:50:58 Epoch 140: loss=0.0574 acc=98.4% best=98.4% time=2552s
+18:53:33 Epoch 150: loss=0.0501 acc=99.1% best=99.1% time=2707s
+18:56:10 Epoch 160: loss=0.0308 acc=100.0% best=100.0% time=2863s
+18:58:51 Epoch 170: loss=0.0210 acc=100.0% best=100.0% time=3025s
+19:01:30 Epoch 180: loss=0.0185 acc=100.0% best=100.0% time=3184s
+19:04:06 Epoch 190: loss=0.0171 acc=100.0% best=100.0% time=3340s
+19:06:49 Epoch 199: loss=0.0168 acc=100.0% best=100.0% time=3503s
+19:06:49 
+=== KÉSZ! ===
+19:06:49 Best accuracy: 100.0%
+19:06:49 Idő: 3503s
+19:06:49 
+=== TESZT ===
+19:06:49 ✅ '5 - 2 =' → 3 (expected 3)
+19:06:49 ✅ '8 - 5 =' → 3 (expected 3)
+19:06:49 ✅ '2 - 1 =' → 1 (expected 1)
+19:06:49 ✅ '5 - 3 =' → 2 (expected 2)
+19:06:49 ✅ '10 - 1 =' → 9 (expected 9)
+19:06:49 ✅ '6 - 1 =' → 5 (expected 5)
+19:06:49 ❌ '7 - 4 =' → 1 (expected 3)
+19:06:49 ✅ '9 - 2 =' → 7 (expected 7)
+19:06:49 ❌ '4 - 2 =' → 1 (expected 2)
+19:06:49 ✅ '7 - 1 =' → 6 (expected 6)
+19:06:49 ✅ '3 - 1 =' → 2 (expected 2)
+19:06:49 ✅ '10 - 3 =' → 7 (expected 7)
+19:06:50 ✅ '5 - 2 = ?' → 3 (expected 3)
+19:06:50 ❌ 'mennyi 8 - 5?' → 7 (expected 3)
+19:06:50 ✅ 'Szamitsd ki: 6 - 1' → 5 (expected 5)
+19:06:50 ✅ '10 minusz 1 az' → 9 (expected 9)
+19:06:50 ✅ '3 almabol 1-et megeszek, marad' → 2 (expected 2)
+19:06:50 ❌ 'Mennyi 7 - 3?' → 6 (expected 4)
+19:06:50 ❌ 'eredmeny: 9 - 5 =' → 5 (expected 4)
+19:06:50 ✅ '8 almabol 3-at megeszek, marad' → 5 (expected 5)
+19:06:50 
+Test accuracy: 15/20 = 75.0%
+19:06:50 Best adapter: pulse_adapter_best.pt
+19:06:50 
+Következő lépés: másold át a NEURA 300M checkpoint-hoz, és futtasd ugyanezt!
