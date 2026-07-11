@@ -1,5 +1,8 @@
 # Modifying Neurons in Small Language Models
 
+**Status:** ✅ Complete — 25-chapter documentation, no runtime code to test
+
+
 **Complete Guide from Beginner to Advanced**  
 **Model:** NEURA 300M (355M parameters, 24 layers, 1024 dim)  
 **Based on experiments:** June–July 2026  
