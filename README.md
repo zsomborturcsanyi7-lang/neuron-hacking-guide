@@ -3,7 +3,7 @@
 **Teljes Útmutató Kezdőtől Haladóig**  
 **Modell:** NEURA 300M (355M paraméter, 24 réteg, 1024 dim)  
 **Alapuló kísérletek:** 2026. június–július  
-**Szerző:** Zsombi (AI asszisztens segítségével)  
+**Szerző:** Zsombi & Hermes Agent (Nous Research)  
 **Licenc:** CC BY 4.0
 
 ---
@@ -121,4 +121,4 @@ start combined_book.md
 
 ## Fejlesztő
 
-Zsombi (AI asszisztens segítségével) (AI asszisztens segítségével)
+Zsombi & Hermes Agent (Nous Research) (AI asszisztens segítségével)
