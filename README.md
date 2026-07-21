@@ -1,40 +1,34 @@
-# Neuron Modification Guide — Lépésről lépésre útmutató neuronok módosításához kis nyelvi modellekben
+# Neuron Modification Guide — Step-by-Step Guide to Modifying Neurons in Small LMs
 
-**Status:** ✅ Complete — 25 fejezetes dokumentáció kész, nincs futtatható kód
+**Status:** ✅ Complete — 25-chapter documentation, no runtime code to test
 
-Teljes útmutató kezdőtől haladóig a neuronok közvetlen módosításához kis nyelvi modellekben (NEURA 300M, 355M paraméter, 24 réteg, 1024 dim). 25 fejezet: aktiváció patching, ROME, MEMIT, FiNE, sparse autoencoderek, activation steering.
+Complete guide from beginner to advanced for directly modifying neurons in small language models (NEURA 300M, 355M params, 24 layers, 1024 dim). 25 chapters: activation patching, ROME, MEMIT, FiNE, sparse autoencoders, activation steering.
 
-**Modell:** NEURA 300M (355M parameters, 24 layers, 1024 dim)
-**Kísérletek:** 2026. június-július
-**Licenc:** CC BY 4.0
+**Model:** NEURA 300M (355M parameters, 24 layers, 1024 dim)
+**Experiments:** June–July 2026
+**License:** CC BY 4.0
 
 ## ⚠️ THIS PROJECT IS UNFINISHED — FEEL FREE TO CONTINUE IT ⚠️
 
-**Ez a projekt NINCS KÉSZEN. Bárki folytathatja, aki akarja!**
-Ezt a projektet Zsombi & Hermes Agent (Nous Research) közösen fejlesztette, de egyik projekt sincs 100%-osan befejezve. Ha tetszik az ötlet és tovább fejlesztenéd, nyugodtan fork-old, folytasd, és csinálj belőle valami nagyszerűt!
+This project was developed by Zsombi & Hermes Agent (Nous Research). If you like the idea and want to continue, feel free to fork and make something great!
 
 ---
 
-## Tartalom (25 fejezet)
-
-| Fájl | Téma |
-|------|------|
-| `ch19_activation_patching.md` | Aktiváció patching |
+## Chapters (25 total)
+| File | Topic |
+|------|-------|
+| `neuron_modification_book.md` | Full book |
+| `combined_book.md` | Combined version |
+| `ch19_activation_patching.md` | Activation patching |
 | `ch20_ROME.md` | ROME (Rank-One Model Editing) |
 | `ch21_MEMIT.md` | MEMIT (Mass Editing Memory in Transformers) |
 | `ch22_FiNE.md` | FiNE (Fast Inference Neural Editing) |
-| `ch23_SAE.md` | Sparse Autoencoderek |
+| `ch23_SAE.md` | Sparse Autoencoders |
 | `ch24_steering.md` | Activation steering |
-| `ch25_update.md` | Frissítések |
-| `neuron_modification_book.md` | Teljes könyv |
-| `combined_book.md` | Összevont verzió |
+| `ch25_update.md` | Updates |
 
-### Kutatási cikkek
-- NEURA training dynamics
-- Neuron specializáció
-- Attention hierarchia
-- Miért nem tudnak reasoning-olni a kis modellek
-- Practical guide
+### Research papers
+NEURA training dynamics, neuron specialization, attention hierarchy, reasoning limitations in small models, practical guide.
 
-## Fejlesztő
+## Developer
 Zsombi & Hermes Agent (Nous Research)
