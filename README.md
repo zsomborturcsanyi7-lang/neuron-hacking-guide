@@ -1,4 +1,4 @@
-# Neuron Modification Guide — Step-by-Step Guide to Modifying Neurons in Small LMs
+# neuron-hacking-guide
 
 **Status:** ✅ Complete — 25-chapter documentation, no runtime code to test
 
