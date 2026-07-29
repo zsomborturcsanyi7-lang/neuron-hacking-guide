@@ -1,18 +1,18 @@
 # neuron-hacking-guide
 
-Kódgyűjtemény és jegyzetek a nyelvi modellek belső reprezentációjának módosításához (ROME, MEMIT, SAE).
+Code snippets and notes on internal language model representation editing (ROME, MEMIT, SAE).
 
-## 📌 A projekt célja
-Nyelvi modellek specifikus ismereteinek szerkesztése és elemzése (model editing).
+## 📌 Overview & Purpose
+Collection of scripts and experiments focused on editing specific factual knowledge stored within Transformer language models.
 
-## ⚙️ Technológiai stakk
-- Python, PyTorch, Transformers
+## ⚙️ Tech Stack & Architecture
+- Python, PyTorch, HuggingFace Transformers
 
-## 🚀 Telepítés és Használat
+## 🚀 Installation & Quickstart
 ```bash
 git clone https://github.com/zsomborturcsanyi7-lang/neuron-hacking-guide.git
 cd neuron-hacking-guide
 ```
 
-## 📊 Status
-⚠️ **Kutatási jegyzetek és tesztek**.
+## 📊 Project Status
+⚠️ **Research Notes & Experiments**.
